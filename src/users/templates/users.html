@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="main-header-center">
+        <div class="d-inline-block">
+            <h2>Users</h2>
+        </div>
+        {% if request.user.is_admin %}
+            <div class="d-inline-block">
+                <a href="{%url 'register' %}">| Add new student</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="users-list w-25">
+        {% for student in students %}
+            <div class="card mb-1 bg-dark">
+                <div class="card-header bg-dark">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white text-left">
+                            <a href="{%url 'student_enrollments' student_id=student.id %}">{{ student.first_name }} {{ student.last_name }} ({{ student.email }})</a>
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if request.user.is_admin or request.user.is_staff  %}
+        <div class="main-header-center">
+            <div class="d-inline-block">
+                <h2>Professors</h2>
+            </div>
+            {% if request.user.is_admin %}
+                <div class="d-inline-block">
+                    <a href="{%url 'register' %}">| Add new professor</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="users-list w-25">
+            {% for professor in professors %}
+                <div class="card mb-1 bg-dark">
+                    <div class="card-header bg-dark"">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-white text-left">
+                                <a href="">{{ professor.first_name }} {{ professor.last_name }} ({{ professor.email }})</a>
+                            </button>
+                        </h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+

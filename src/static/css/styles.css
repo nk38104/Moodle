@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-head {
+    height: 150px;
+    background: #fff;
+
+}
+
+.sidenav {
+    height: 100%;
+    background: #343a40;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .login-form {
+        margin-top: 10%;
+    }
+
+    .register-form {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        width: 50%;
+        margin-left: 55%; 
+    }
+
+    .sidenav {
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form {
+        margin-top: 40%;
+        padding: 10%;
+    }
+
+    .register-form {
+        margin-top: 20%;
+    }
+
+    .leftside, .rightside {
+        height: 100%;
+    }
+}
+
+.login-main-text {
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h1 {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.btn-black, .dropdown-item:hover  {
+    background-color: #343a40 !important;
+    color: #fff;
+}
+
+.main-header-center, .statuses-main-header-center {
+    margin: auto;
+    margin-bottom: 70px;
+    width: 30%;
+    border-bottom: 3px solid #343a40;
+    padding: 100px 5px 5px 5px;
+    text-align: center;
+}
+
+.main-header-center h2 {
+    margin-right: 15px;
+}
+
+.accordion {
+    margin-left: 25%;
+    margin-bottom: 200px;
+}
+
+.accordion svg, .users-list a {
+    color: white;
+}
+
+.accordion .function-right, .enroll-accordion .function-right {
+    float: right;
+    color: white;
+}
+
+.nav-link {
+    margin-top: 0.3rem;
+    margin-left: 0.7rem;
+    padding: 0;
+}
+
+.leftside, .rightside {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+}
+
+.enroll-accordion {
+    margin: auto;
+}
+
+.users-list {
+    margin-left: 37%;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.statuses-main-header-center {
+    width: 50%;
+}
+
+
