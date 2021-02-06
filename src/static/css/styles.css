@@ -77,12 +77,14 @@ body {
     font-weight: bold;
 }
 
-.btn-black, .dropdown-item:hover  {
+.btn-black,
+.dropdown-item:hover  {
     background-color: #343a40 !important;
     color: #fff;
 }
 
-.main-header-center, .statuses-main-header-center {
+.main-header-center, 
+.statuses-main-header-center {
     margin: auto;
     margin-bottom: 70px;
     width: 30%;
@@ -100,11 +102,13 @@ body {
     margin-bottom: 200px;
 }
 
-.accordion svg, .users-list a {
+.accordion svg,
+.users-list a {
     color: white;
 }
 
-.accordion .function-right, .enroll-accordion .function-right {
+.accordion .function-right,
+.enroll-accordion .function-right {
     float: right;
     color: white;
 }
@@ -134,5 +138,134 @@ body {
 .statuses-main-header-center {
     width: 50%;
 }
+
+.container {
+    width: 500px;
+    position: relative;
+    margin: 150px auto;
+    border: 2px #343a40 solid;
+    border-radius: 10px;
+}
+
+.container h2 {
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 36px;
+    color: #343a40;
+    border-bottom: 1px solid silver;
+}
+
+.container form {
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+form .txt-field {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #adadad;
+}
+
+form .txt-field,
+.select-field,
+input[type="submit"] {
+    font-size: 18px;
+}
+
+.txt-field input {
+    width: 100%;
+    height: 40px;
+    padding: 0 5px;
+    color: #343a40;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 600s ease-out, background-color 600s ease-out";
+    -webkit-transition-delay: 600s;
+}
+
+.txt-field label {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: #343a40;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt-field span::before {
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    top: 40px;
+    background: #2691d9;
+    content: none;
+    transition: .5s;
+}
+
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label {
+    top: -5px;
+}
+
+.txt-field input:focus ~ span::before,
+.txt-field input:valid ~ span::before {
+    width: 100%;
+}
+
+input[type="text"], select {
+    font-size: 16px;
+}
+
+.select-field {
+    margin-top: 35px;
+    color: #adadad;
+}
+
+.select-field label {
+    position: absolute;
+    left: 12%;
+    color: #343a40;
+}
+
+select {
+    width: 100%;
+    height: 40px;
+    color: #666666;
+    border: 2px solid #adadad;
+    outline: none;
+}
+
+.select-field select:focus + label {
+    color: #666666;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: white;
+    background: #343a40;
+    border: 1px solid;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    border-color: #343a40;
+    transition: .5s;
+}
+
+
 
 

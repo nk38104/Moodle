@@ -16,7 +16,7 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="">My profile</a>
+                    <a class="dropdown-item" href="{%url 'user_profile' %}">My profile</a>
                     <a class="dropdown-item" href="{%url 'courses' %}">Courses</a>
                     {% if request.user.is_staff or request.user.is_admin %}
                         <a class="dropdown-item" href="{%url 'users' %}">Users</a>
