@@ -132,8 +132,7 @@ AUTHENTICATION_BACKENDS = [
     'users.backends.CaseInsensitiveModelBackend',
 ]
 
-STATICFILES_DIRS = [
-    "D:\ProjDev\Python\Moodle\Moodle\src\static",
+STATICFILES_DIRS = [ "D:\ProjDev\Python\Moodle\Moodle\src\static", 
 ]
 
 
