@@ -1,2 +1,2 @@
 # Moodle
-Mentoring system project for college course
+Mentoring system project for university course
