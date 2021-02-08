@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from users.forms import CreateUserForm
 
+
 # Create your views here.
 
 @login_required(login_url='login')
@@ -36,19 +37,16 @@ def logout_user(request):
 
 
 def register(request):
-    if request.user.is_authenticated:
-        return redirect('index')
+    if request.method == 'GET':
+        user_form = CreateUserForm()
+        return render(request, 'register.html', {'form':user_form})
     else:
-        if request.method == 'GET':
-            user_form = CreateUserForm()
-            return render(request, 'register.html', {'form':user_form})
+        user_form = CreateUserForm(request.POST)
+        
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('login')
         else:
-            user_form = CreateUserForm(request.POST)
-            
-            if user_form.is_valid():
-                user_form.save()
-                return redirect('login')
-            else:
-                return render(request, 'register.html', {'form':user_form})
+            return render(request, 'register.html', {'form':user_form})
 
 
