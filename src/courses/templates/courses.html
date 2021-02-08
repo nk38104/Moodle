@@ -26,7 +26,7 @@
                             </button>
                         </h5>
                     </div>
-                    {% if request.user.is_staff and request.user.is_admin %}
+                    {% if request.user.is_staff or request.user.is_admin %}
                         <div class="function-right d-inline-block">
                             <a class="function-right nav-link" href="{%url 'edit_course' course_id=course.id %}" data-toggle="tooltip" title="Edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

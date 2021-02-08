@@ -1,8 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark align-items-baseline w-100">
-    <a class="navbar-brand ml-3 mb-1 font-italic h1" href="{% url 'index' %}">SkillUp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <div>
+        <a class="navbar-brand ml-3 mb-1 font-italic h1" href="{% url 'index' %}">SkillUp</a>
+    </div>
+    <div class="navbar-collapse">
+        <a class="ml-5 mr-4 text-white" href="{%url 'index' %}">Home</a>
+        <a class="mr-4 text-white" href="{%url 'courses' %}">Courses</a>
+        {% if request.user.is_staff or request.user.is_admin %}
+            <a class="text-white" href="{%url 'users' %}">Users</a>
+        {% else %}
+            <a class="text-white" href="{%url 'student_enrollments' student_id=request.user.id %}">Enrollments</a>
+        {% endif %}
+    </div>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item active mr-3">
@@ -17,12 +28,6 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{%url 'user_profile' %}">My profile</a>
-                    <a class="dropdown-item" href="{%url 'courses' %}">Courses</a>
-                    {% if request.user.is_staff or request.user.is_admin %}
-                        <a class="dropdown-item" href="{%url 'users' %}">Users</a>
-                    {% else %}
-                        <a class="dropdown-item" href="{%url 'student_enrollments' student_id=request.user.id %}">Enrollments</a>
-                    {% endif %}
                     <div class="dropdown-divider" style="border-color:darkgrey;"></div>
                     <a class="dropdown-item" href="{%url 'logout' %}">Log out</a>
                 </div>

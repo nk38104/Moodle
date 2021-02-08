@@ -106,13 +106,6 @@
                                             {% elif enrollment.status == "passed" %}
                                                 {% if request.user.is_admin or request.user.is_staff %}
                                                     <div class="function-right d-inline-block">
-                                                        <a class="function-right nav-link" href="{%url 'enroll' student_id=student.id course_id=enrollment.course.id %}" data-toggle="tooltip" title="Change to enrolled">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16" data-toggle="tooltip" title="Course passed">
-                                                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                    <div class="function-right d-inline-block">
                                                         <a class="function-right nav-link" href="{%url 'remove_enrollment' student_id=student.id course_id=enrollment.course.id %}" data-toggle="tooltip" title="Remove">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-dash-square" viewBox="0 0 16 16">
                                                                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -121,11 +114,18 @@
                                                         </a>
                                                     </div>
                                                 {% endif %}
+                                                <div class="function-right d-inline-block">
+                                                    <a class="function-right nav-link" href="{%url 'enroll' student_id=student.id course_id=enrollment.course.id %}" data-toggle="tooltip" title="Change to enrolled">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16" data-toggle="tooltip" title="Course passed">
+                                                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
                                                 <div class="function-right d-inline-block" title="Course passed!">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-award function-right nav-link" viewBox="0 0 16 16">
                                                         <path d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
                                                         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-                                                        </svg>
+                                                    </svg>
                                                 </div>
                                             {% endif %}
                                         </div>
