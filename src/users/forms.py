@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUsers
+from users.enums import RoleChoices
 
 
 # Create your forms here.

@@ -6,7 +6,7 @@
       {% for field in form %}
         {% for error in field.errors %}
           <div class="alert alert-danger" role="alert">
-            {{ error }}
+            {{ error }} {{ field.label_tag }}
           </div>
         {% endfor %}
         {% if field is form.role or field is form.status %}
@@ -27,7 +27,12 @@
           </div>
         {% endif %}
       {% endfor %}
-      <input class="mt-5" type="submit" value="Save"/>
+      <input class="mt-5 mb-3" type="submit" value="Save"/>
+      {% if request.user.is_admin %}
+        <button class="btn-edit mb-2"><a href="{% url 'users' %}">Go back</a></button>
+      {% else %}
+        <button class="btn-edit mb-2"><a href="{% url 'login' %}">Go back</a></button>
+      {% endif %}
     </form>
   </div>
 {% endblock %}

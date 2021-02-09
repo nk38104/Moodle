@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from users.forms import CreateUserForm
+from users.enums import RoleChoices, StatusChoices
 
 
 # Create your views here.
@@ -39,10 +40,14 @@ def logout_user(request):
 def register(request):
     if request.method == 'GET':
         user_form = CreateUserForm()
-        return render(request, 'register.html', {'form':user_form})
+        return render(request, 'register.html', {'form':user_form, 'student_role':RoleChoices.STUDENT})
     else:
-        user_form = CreateUserForm(request.POST)
+        user_form = CreateUserForm(request.POST.copy())
+        user_role = user_form['role'].value()
         
+        if not user_role:
+            user_form.data['role'] = RoleChoices.STUDENT.name
+
         if user_form.is_valid():
             user_form.save()
             return redirect('login')

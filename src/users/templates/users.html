@@ -3,7 +3,11 @@
     {% include 'navbar.html' %}
     <div class="main-header-center">
         <div class="d-inline-block">
-            <h2>Users</h2>
+            {% if request.user.is_admin %}
+                <h2>Users</h2>
+            {% else %}
+                <h2>Students</h2>
+            {% endif %}
         </div>
         {% if request.user.is_admin %}
             <div class="d-inline-block">
